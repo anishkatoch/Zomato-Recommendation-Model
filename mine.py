@@ -3,15 +3,15 @@ import numpy as np
 import streamlit as st
 import pickle
 
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-import warnings
-from PIL import Image
-import base64
+# from sklearn.preprocessing import LabelEncoder
+# from sklearn.preprocessing import MinMaxScaler
+# from sklearn.linear_model import LogisticRegression
+# from sklearn.tree import DecisionTreeClassifier
+# from sklearn.model_selection import train_test_split
+# from sklearn.linear_model import LinearRegression
+# import warnings
+# from PIL import Image
+# import base64
 df = pd.read_excel("F:\\Masai\\Project Webpage\\Zomato Data.xlsx")
 
 feedback_file_path = "feedback.xlsx"
