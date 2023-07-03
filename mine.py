@@ -39,6 +39,7 @@ def save_feedback(name, feedback, feedback_data):
     feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
     feedback_data.to_excel(feedback_file_path, index=False)
     print("Feedback saved successfully.")
+    return feedback_data
 
 def load_feedback_data():
     try:
@@ -195,7 +196,7 @@ def main():
         
         # st.markdown("<span style='color: purple; font-weight: bold; font-size: 30px;'>Recommended Location:  {}</span>".format(Recomm_location), unsafe_allow_html=True)
 
-    
+   save_feedback(name, feedback,feedback_data) 
     # Add feedback section
     load_feedback_data()
     st.markdown("<h1 style='text-align: center; color: DarkGoldenrod;'>FEEDBACK</h1>", unsafe_allow_html=True)
@@ -209,7 +210,7 @@ def main():
 
     feedback_data = save_feedback(name, feedback, feedback_data)
     if st.button("Submit"):
-        save_feedback(name, feedback,feedback_data)
+        
         st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
         
 
