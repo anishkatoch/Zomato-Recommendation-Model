@@ -59,7 +59,7 @@ def save_feedback(name, feedback, feedback_data):
 #         feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
 #     return feedback_data
 
-feedback_data = load_feedback_data()
+# feedback_data = load_feedback_data()
 
 
 # def predict_price(Cuisine, Location):
