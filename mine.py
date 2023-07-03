@@ -17,7 +17,7 @@ import os
 url="https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Zomato%20CSV.csv"
 df=pd.read_csv(url)
 
-feedback_file_path = "feedback.csv"
+feedback_file_path = "feedback.xlsx"
 feedback_data = pd.DataFrame()  
 
 
