@@ -1,7 +1,4 @@
-import subprocess
 
-# Install openpyxl using pip
-subprocess.check_call(['pip', 'install', 'openpyxl'])
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -39,18 +36,18 @@ def save_feedback(name, feedback):
     print("Feedback saved successfully.")
 
 
-# def load_feedback_data():
-#     global feedback_data
-#     try:
-#         feedback_data = pd.read_excel(feedback_file_path)
-#     except FileNotFoundError:
-#         feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
+def load_feedback_data():
+    global feedback_data
+    try:
+        feedback_data = pd.read_excel(feedback_file_path)
+    except FileNotFoundError:
+        feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
 
-def save_feedback(name, feedback, feedback_data):
-    feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
-    feedback_data.to_excel(feedback_file_path, index=False)
-    print("Feedback saved successfully.")
-    return feedback_data
+# def save_feedback(name, feedback, feedback_data):
+#     feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
+#     feedback_data.to_excel(feedback_file_path, index=False)
+#     print("Feedback saved successfully.")
+#     return feedback_data
 
 # def load_feedback_data():
 #     try:
