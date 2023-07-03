@@ -205,21 +205,26 @@ def main():
     # Add feedback section
     load_feedback_data()
     st.markdown("<h1 style='text-align: center; color: DarkGoldenrod;'>FEEDBACK</h1>", unsafe_allow_html=True)
-    
 
-    
+    st.dataframe(feedback_data)
     
     st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'><b>Name</b></h2>", unsafe_allow_html=True)
     name = st.text_input("")
     st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'>Feedback</h2>", unsafe_allow_html=True)
     feedback = st.text_area("")
 
-    
     if st.button("Submit"):
+        try:
+            save_feedback(name, feedback)
+            st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
+        except Exception as e:
+            st.markdown("<span style='color: red; font-weight: bold; font-size: 35px;'>Error occurred while saving feedback: {}</span>".format(str(e)), unsafe_allow_html=True)
+
+    # if st.button("Submit"):
         
-        st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
+        # st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
     
-    print(feedback_data)
+    
         
         
 
