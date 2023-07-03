@@ -37,74 +37,74 @@ def load_feedback_data():
 
 
 
-def predict_price(Cuisine, Location):
-    df2=pd.read_csv(url)
-    df3=df2[['Cuisine','Location','Price_For_One']]
+# def predict_price(Cuisine, Location):
+#     df2=pd.read_csv(url)
+#     df3=df2[['Cuisine','Location','Price_For_One']]
 
-    loc = ['St. Marks Road', 'Frazer Town', 'Shivajinagar', 'City Market', 'Koramangala', 'Church Street', 'Lavelle Road', 'Shanti Nagar', 'Brigade Road', 'MG Road', 'Commercial Street', 'Residency Road', 'Basavanagudi', 'Mantri Square', 'Richmond Road', 'Malleshwaram', 'Indiranagar', 'Ulsoor', 'Garuda Mall', 'Jayanagar', 'Richmond Town', 'UB City', 'Vasanth Nagar', 'Wilson Garden', 'Cunningham Road', 'Seshadripuram', 'BTM', 'Rajajinagar', 'Domlur', 'Majestic', 'Sadashiv Nagar', 'Old Madras Road', 'Hosur Road', 'Lido Mall', 'Ejipura', 'Langford Town', 'Forum Rex Walk', 'Building 105', 'RT Nagar', '1 Sobha', 'Jatti Building', 'Basaveshwara Nagar', 'Nexus', 'Race Course Road', 'Old Airport Road', 'Infantry Road', 'Prestige Trade Tower', 'Thippasandra', 'Banashankari', 'ITC Gardenia', 'Jeevan Bhima Nagar', 'Hotel Southern Star', 'Global Village', 'Nagawara', 'BluPetal Hotel', 'Mysore Road', 'Magadi Road', 'CV Raman Nagar', 'Vijay Nagar', 'Sigma Mall', 'Kammanahalli', 'Kalyan Nagar']
-    locate= sorted(loc)
-    print(locate)
+#     loc = ['St. Marks Road', 'Frazer Town', 'Shivajinagar', 'City Market', 'Koramangala', 'Church Street', 'Lavelle Road', 'Shanti Nagar', 'Brigade Road', 'MG Road', 'Commercial Street', 'Residency Road', 'Basavanagudi', 'Mantri Square', 'Richmond Road', 'Malleshwaram', 'Indiranagar', 'Ulsoor', 'Garuda Mall', 'Jayanagar', 'Richmond Town', 'UB City', 'Vasanth Nagar', 'Wilson Garden', 'Cunningham Road', 'Seshadripuram', 'BTM', 'Rajajinagar', 'Domlur', 'Majestic', 'Sadashiv Nagar', 'Old Madras Road', 'Hosur Road', 'Lido Mall', 'Ejipura', 'Langford Town', 'Forum Rex Walk', 'Building 105', 'RT Nagar', '1 Sobha', 'Jatti Building', 'Basaveshwara Nagar', 'Nexus', 'Race Course Road', 'Old Airport Road', 'Infantry Road', 'Prestige Trade Tower', 'Thippasandra', 'Banashankari', 'ITC Gardenia', 'Jeevan Bhima Nagar', 'Hotel Southern Star', 'Global Village', 'Nagawara', 'BluPetal Hotel', 'Mysore Road', 'Magadi Road', 'CV Raman Nagar', 'Vijay Nagar', 'Sigma Mall', 'Kammanahalli', 'Kalyan Nagar']
+#     locate= sorted(loc)
+#     print(locate)
 
-    food=['Fast Food', 'Biryani', 'Sweets', 'Desserts', 'Bengali','South Indian', 'Italian', 'Arabian', 'Mexican', 'North Indian','Street Food', 'Beverages', 'Kerala', 'Andhra', 'Chinese', 'Asian','Tibetan']
-    cus = sorted(food)
-    print(cus)
+#     food=['Fast Food', 'Biryani', 'Sweets', 'Desserts', 'Bengali','South Indian', 'Italian', 'Arabian', 'Mexican', 'North Indian','Street Food', 'Beverages', 'Kerala', 'Andhra', 'Chinese', 'Asian','Tibetan']
+#     cus = sorted(food)
+#     print(cus)
 
-    dict1 = {}
-    for i in range(len(locate)):
-        dict1[locate[i]] = i 
+#     dict1 = {}
+#     for i in range(len(locate)):
+#         dict1[locate[i]] = i 
 
-    dict2 = {}
-    for i in range(len(cus)):
-        dict2[cus[i]] = i
+#     dict2 = {}
+#     for i in range(len(cus)):
+#         dict2[cus[i]] = i
     
-    lc = LabelEncoder()
-    df3['Cuisine']=lc.fit_transform(df3['Cuisine'])
-    df3['Location']=lc.fit_transform(df3['Location'])
+#     lc = LabelEncoder()
+#     df3['Cuisine']=lc.fit_transform(df3['Cuisine'])
+#     df3['Location']=lc.fit_transform(df3['Location'])
 
-    f1=dict2[Cuisine]
-    l1=dict1[Location]
+#     f1=dict2[Cuisine]
+#     l1=dict1[Location]
 
-    df1_new=df3[(df3['Cuisine']==f1) | (df3['Location']==l1)]
-    print(df1_new)
+#     df1_new=df3[(df3['Cuisine']==f1) | (df3['Location']==l1)]
+#     print(df1_new)
 
-    x=df1_new.drop(['Price_For_One'],axis=1)
-    y=df1_new['Price_For_One']
+#     x=df1_new.drop(['Price_For_One'],axis=1)
+#     y=df1_new['Price_For_One']
 
-    lr=LinearRegression()
-    x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.30,random_state=10)
-    lr.fit(x_train,y_train)
+#     lr=LinearRegression()
+#     x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.30,random_state=10)
+#     lr.fit(x_train,y_train)
 
-    return round(lr.predict(x_test).mean())
+#     return round(lr.predict(x_test).mean())
 
 
-def predict_location(Cuisine, Location, Preferred_Price_For_1):
-    df = pd.read_csv(url)
-    z = pd.DataFrame({"Cuisine": [Cuisine], "Location": [Location], "Price_For_One": [Preferred_Price_For_1]})
-    df = pd.concat([df, z])
-    lst = list(df["Location"].unique())
+# def predict_location(Cuisine, Location, Preferred_Price_For_1):
+#     df = pd.read_csv(url)
+#     z = pd.DataFrame({"Cuisine": [Cuisine], "Location": [Location], "Price_For_One": [Preferred_Price_For_1]})
+#     df = pd.concat([df, z])
+#     lst = list(df["Location"].unique())
 
-    dict1 = {}
-    for i in range(len(lst)):
-        dict1[lst[i]] = i
+#     dict1 = {}
+#     for i in range(len(lst)):
+#         dict1[lst[i]] = i
 
-    dict2 = {}
-    for i in range(len(lst)):
-        dict2[i] = lst[i]
+#     dict2 = {}
+#     for i in range(len(lst)):
+#         dict2[i] = lst[i]
 
-    df["Location"] = df["Location"].apply(lambda x: dict1[x])
-    df = df[["Cuisine", "Location", "Price_For_One"]]  # Remove "Index" from the selected columns
-    x = df.drop("Location", axis=1)
-    y = df["Location"]
+#     df["Location"] = df["Location"].apply(lambda x: dict1[x])
+#     df = df[["Cuisine", "Location", "Price_For_One"]]  # Remove "Index" from the selected columns
+#     x = df.drop("Location", axis=1)
+#     y = df["Location"]
 
-    le = LabelEncoder()
-    x["Cuisine"] = le.fit_transform(x["Cuisine"])
-    x["Price_For_One"] = MinMaxScaler().fit_transform(x[["Price_For_One"]])  # Normalize only "Price_For_One"
+#     le = LabelEncoder()
+#     x["Cuisine"] = le.fit_transform(x["Cuisine"])
+#     x["Price_For_One"] = MinMaxScaler().fit_transform(x[["Price_For_One"]])  # Normalize only "Price_For_One"
 
-    xtr, xts, ytr, yts = train_test_split(x, y, test_size=0.3)
-    model = DecisionTreeClassifier()
-    model.fit(xtr, ytr)
-    ypred = model.predict(xts)
-    return dict2[ypred[-1]]
+#     xtr, xts, ytr, yts = train_test_split(x, y, test_size=0.3)
+#     model = DecisionTreeClassifier()
+#     model.fit(xtr, ytr)
+#     ypred = model.predict(xts)
+#     return dict2[ypred[-1]]
 
 page_bg_img = '''
     <style>
@@ -163,8 +163,8 @@ def main():
         Popular_Rest_Serving_Your_Cuisine = b[b["Delivery_Review_Number"] == b["Delivery_Review_Number"].max()]['Restaurant_Name'].to_string().split()[1:]
         Popular_Rest_Serving_Your_Cuisine= " ".join(Popular_Rest_Serving_Your_Cuisine)
 
-        Recomm_price = predict_price(Cuisine,Preferred_Location)
-        Recomm_location = predict_location(Cuisine,Preferred_Location,Preferred_Price_For_1)
+        # Recomm_price = predict_price(Cuisine,Preferred_Location)
+        # Recomm_location = predict_location(Cuisine,Preferred_Location,Preferred_Price_For_1)
 
 
         st.markdown("<span style='color: purple; font-weight: bold; font-size: 30px;'>Average Price for 1:   {}</span>".format(avg), unsafe_allow_html=True)
@@ -177,9 +177,9 @@ def main():
         
         st.markdown("<span style='color: purple; font-weight: bold; font-size: 30px;'>Popular Restaurant that serves your Cuisine: {}</span>".format(Popular_Rest_Serving_Your_Cuisine), unsafe_allow_html=True)
        
-        st.markdown("<span style='color: purple; font-weight: bold; font-size: 30px;'>Recommended Price:  {}</span>".format(Recomm_price), unsafe_allow_html=True)
+        # st.markdown("<span style='color: purple; font-weight: bold; font-size: 30px;'>Recommended Price:  {}</span>".format(Recomm_price), unsafe_allow_html=True)
         
-        st.markdown("<span style='color: purple; font-weight: bold; font-size: 30px;'>Recommended Location:  {}</span>".format(Recomm_location), unsafe_allow_html=True)
+        # st.markdown("<span style='color: purple; font-weight: bold; font-size: 30px;'>Recommended Location:  {}</span>".format(Recomm_location), unsafe_allow_html=True)
 
     
     # Add feedback section
