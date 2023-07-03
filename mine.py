@@ -205,7 +205,7 @@ def main():
     # Add feedback section
     load_feedback_data()
     st.markdown("<h1 style='text-align: center; color: DarkGoldenrod;'>FEEDBACK</h1>", unsafe_allow_html=True)
-    st.dataframe(feedback_data)
+    
 
     
     
