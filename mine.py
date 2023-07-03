@@ -200,12 +200,14 @@ def main():
     load_feedback_data()
     st.markdown("<h1 style='text-align: center; color: DarkGoldenrod;'>FEEDBACK</h1>", unsafe_allow_html=True)
 
-    feedback_data = save_feedback(name, feedback, feedback_data)
+    
     
     st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'><b>Name</b></h2>", unsafe_allow_html=True)
     name = st.text_input("")
     st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'>Feedback</h2>", unsafe_allow_html=True)
     feedback = st.text_area("")
+
+    feedback_data = save_feedback(name, feedback, feedback_data)
     if st.button("Submit"):
         save_feedback(name, feedback,feedback_data)
         st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
