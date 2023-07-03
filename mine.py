@@ -136,8 +136,10 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 def main():
     global feedback_data
     feedback_data = load_feedback_data()
-
-    save_feedback(name, feedback)
+    try:
+        save_feedback(name, feedback)
+    except Exception as e:
+        print(f"Error occurred while saving feedback: {str(e)}")
  
     
     
