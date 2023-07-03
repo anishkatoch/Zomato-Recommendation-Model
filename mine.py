@@ -22,9 +22,15 @@ feedback_data = pd.DataFrame()
 
 
 
+# def save_feedback(name, feedback):
+#     global feedback_data
+#     feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
+#     feedback_data.to_excel(feedback_file_path, index=False)
+#     print("Feedback saved successfully.")
 def save_feedback(name, feedback):
     global feedback_data
-    feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
+    new_feedback = pd.DataFrame({"Name": [name], "Feedback": [feedback]})
+    feedback_data = pd.concat([feedback_data, new_feedback], ignore_index=True)
     feedback_data.to_excel(feedback_file_path, index=False)
     print("Feedback saved successfully.")
 
