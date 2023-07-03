@@ -21,32 +21,32 @@ feedback_data = pd.DataFrame()
 
 
 
-# def save_feedback(name, feedback):
-#     global feedback_data
-#     feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
-#     feedback_data.to_excel(feedback_file_path, index=False)
-#     print("Feedback saved successfully.")
-
-
-# def load_feedback_data():
-#     global feedback_data
-#     try:
-#         feedback_data = pd.read_excel(feedback_file_path)
-#     except FileNotFoundError:
-#         feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
-
-def save_feedback(name, feedback, feedback_data):
+def save_feedback(name, feedback):
+    global feedback_data
     feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
     feedback_data.to_excel(feedback_file_path, index=False)
     print("Feedback saved successfully.")
-    return feedback_data
+
 
 def load_feedback_data():
+    global feedback_data
     try:
         feedback_data = pd.read_excel(feedback_file_path)
     except FileNotFoundError:
         feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
-    return feedback_data
+
+# def save_feedback(name, feedback, feedback_data):
+#     feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
+#     feedback_data.to_excel(feedback_file_path, index=False)
+#     print("Feedback saved successfully.")
+#     return feedback_data
+
+# def load_feedback_data():
+#     try:
+#         feedback_data = pd.read_excel(feedback_file_path)
+#     except FileNotFoundError:
+#         feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
+#     return feedback_data
 
 feedback_data = load_feedback_data()
 
@@ -134,8 +134,11 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
 def main():
+    global feedback_data
     feedback_data = load_feedback_data()
-    feedback_data=save_feedback(name, feedback, feedback_data)
+
+    save_feedback(name, feedback)
+ 
     
     
     st.markdown("<h1 style='text-align: center; color: Chartreuse; padding: 20px; background-color: #F06292;'>RECOMMENDATION MODEL</h1>", unsafe_allow_html=True)
