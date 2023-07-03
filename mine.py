@@ -39,18 +39,18 @@ def save_feedback(name, feedback):
     print("Feedback saved successfully.")
 
 
-def load_feedback_data():
-    global feedback_data
-    try:
-        feedback_data = pd.read_excel(feedback_file_path)
-    except FileNotFoundError:
-        feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
+# def load_feedback_data():
+#     global feedback_data
+#     try:
+#         feedback_data = pd.read_excel(feedback_file_path)
+#     except FileNotFoundError:
+#         feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
 
-# def save_feedback(name, feedback, feedback_data):
-#     feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
-#     feedback_data.to_excel(feedback_file_path, index=False)
-#     print("Feedback saved successfully.")
-#     return feedback_data
+def save_feedback(name, feedback, feedback_data):
+    feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
+    feedback_data.to_excel(feedback_file_path, index=False)
+    print("Feedback saved successfully.")
+    return feedback_data
 
 # def load_feedback_data():
 #     try:
@@ -216,23 +216,23 @@ def main():
     load_feedback_data()
     st.markdown("<h1 style='text-align: center; color: DarkGoldenrod;'>FEEDBACK</h1>", unsafe_allow_html=True)
 
-    st.dataframe(feedback_data)
+    # st.dataframe(feedback_data)
     
     st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'><b>Name</b></h2>", unsafe_allow_html=True)
     name = st.text_input("")
     st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'>Feedback</h2>", unsafe_allow_html=True)
     feedback = st.text_area("")
 
-    if st.button("Submit"):
-        try:
-            save_feedback(name, feedback)
-            st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
-        except Exception as e:
-            st.markdown("<span style='color: red; font-weight: bold; font-size: 35px;'>Error occurred while saving feedback: {}</span>".format(str(e)), unsafe_allow_html=True)
-
     # if st.button("Submit"):
+    #     try:
+    #         save_feedback(name, feedback)
+    #         st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
+    #     except Exception as e:
+            # st.markdown("<span style='color: red; font-weight: bold; font-size: 35px;'>Error occurred while saving feedback: {}</span>".format(str(e)), unsafe_allow_html=True)
+
+    if st.button("Submit"):
         
-        # st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
+        st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
     
     
         
