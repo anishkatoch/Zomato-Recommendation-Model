@@ -12,7 +12,9 @@ import pickle
 # import warnings
 # from PIL import Image
 # import base64
-df = pd.read_excel("F:\\Masai\\Project Webpage\\Zomato Data.xlsx")
+# df = pd.read_excel("F:\\Masai\\Project Webpage\\Zomato Data.xlsx")
+url="https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Zomato%20Data.xlsx"
+df=pd.read_excel(url)
 
 feedback_file_path = "feedback.xlsx"
 feedback_data = pd.DataFrame()  
