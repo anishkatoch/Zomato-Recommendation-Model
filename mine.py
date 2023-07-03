@@ -133,6 +133,7 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
 def main():
+    feedback_data = save_feedback(name, feedback, feedback_data)
 
 
     
