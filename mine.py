@@ -17,7 +17,7 @@ import os
 url="https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Zomato%20CSV.csv"
 df=pd.read_csv(url)
 
-feedback_file_path = "feedback.xlsx"
+feedback_file_path = "feedback.csv"
 feedback_data = pd.DataFrame()  
 
 
@@ -217,9 +217,8 @@ def main():
     if st.button("Submit"):
         
         st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
-    feedback_file_path = os.path.join(os.getcwd(), "feedback.xlsx")   
-    st.subheader("Feedback Data")
-    st.dataframe(feedback_data)
+    
+    
         
         
 
