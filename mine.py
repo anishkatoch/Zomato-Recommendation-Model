@@ -136,7 +136,7 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 def main():
     feedback_data = load_feedback_data()
     save_feedback(name, feedback, feedback_data)
-    feedback_data = save_feedback(name, feedback, feedback_data)
+    
     
     st.markdown("<h1 style='text-align: center; color: Chartreuse; padding: 20px; background-color: #F06292;'>RECOMMENDATION MODEL</h1>", unsafe_allow_html=True)
     
