@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import pickle
+pip install -r requirements.txt
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.linear_model import LogisticRegression
