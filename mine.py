@@ -134,9 +134,9 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
 def main():
-    
-
-
+    feedback_data = load_feedback_data()
+    save_feedback(name, feedback, feedback_data)
+    feedback_data = save_feedback(name, feedback, feedback_data)
     
     st.markdown("<h1 style='text-align: center; color: Chartreuse; padding: 20px; background-color: #F06292;'>RECOMMENDATION MODEL</h1>", unsafe_allow_html=True)
     
@@ -208,7 +208,7 @@ def main():
     st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'>Feedback</h2>", unsafe_allow_html=True)
     feedback = st.text_area("")
 
-    feedback_data = save_feedback(name, feedback, feedback_data)
+    
     if st.button("Submit"):
         
         st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
