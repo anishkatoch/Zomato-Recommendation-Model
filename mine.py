@@ -134,10 +134,14 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
 def main():
-    
- 
-    
-    
+    global feedback_data
+    feedback_data = load_feedback_data()
+    # ...
+    try:
+        save_feedback(name, feedback)
+    except Exception as e:
+        print(f"Error occurred while saving feedback: {str(e)}")
+        
     st.markdown("<h1 style='text-align: center; color: Chartreuse; padding: 20px; background-color: #F06292;'>RECOMMENDATION MODEL</h1>", unsafe_allow_html=True)
     
     html_temp = """
