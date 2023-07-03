@@ -38,7 +38,7 @@ def load_feedback_data():
 
 
 def predict_price(Cuisine, Location):
-    df2=pd.read_excel('F:\\Masai\\Project Webpage\\Zomato Data.xlsx')
+    df2=pd.read_csv(url)
     df3=df2[['Cuisine','Location','Price_For_One']]
 
     loc = ['St. Marks Road', 'Frazer Town', 'Shivajinagar', 'City Market', 'Koramangala', 'Church Street', 'Lavelle Road', 'Shanti Nagar', 'Brigade Road', 'MG Road', 'Commercial Street', 'Residency Road', 'Basavanagudi', 'Mantri Square', 'Richmond Road', 'Malleshwaram', 'Indiranagar', 'Ulsoor', 'Garuda Mall', 'Jayanagar', 'Richmond Town', 'UB City', 'Vasanth Nagar', 'Wilson Garden', 'Cunningham Road', 'Seshadripuram', 'BTM', 'Rajajinagar', 'Domlur', 'Majestic', 'Sadashiv Nagar', 'Old Madras Road', 'Hosur Road', 'Lido Mall', 'Ejipura', 'Langford Town', 'Forum Rex Walk', 'Building 105', 'RT Nagar', '1 Sobha', 'Jatti Building', 'Basaveshwara Nagar', 'Nexus', 'Race Course Road', 'Old Airport Road', 'Infantry Road', 'Prestige Trade Tower', 'Thippasandra', 'Banashankari', 'ITC Gardenia', 'Jeevan Bhima Nagar', 'Hotel Southern Star', 'Global Village', 'Nagawara', 'BluPetal Hotel', 'Mysore Road', 'Magadi Road', 'CV Raman Nagar', 'Vijay Nagar', 'Sigma Mall', 'Kammanahalli', 'Kalyan Nagar']
@@ -78,7 +78,7 @@ def predict_price(Cuisine, Location):
 
 
 def predict_location(Cuisine, Location, Preferred_Price_For_1):
-    df = pd.read_excel("F:\\Masai\\Project Webpage\\Zomato Data.xlsx")
+    df = pd.read_csv(url)
     z = pd.DataFrame({"Cuisine": [Cuisine], "Location": [Location], "Price_For_One": [Preferred_Price_For_1]})
     df = pd.concat([df, z])
     lst = list(df["Location"].unique())
