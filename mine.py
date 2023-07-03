@@ -21,20 +21,33 @@ feedback_data = pd.DataFrame()
 
 
 
-def save_feedback(name, feedback):
-    global feedback_data
+# def save_feedback(name, feedback):
+#     global feedback_data
+#     feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
+#     feedback_data.to_excel(feedback_file_path, index=False)
+#     print("Feedback saved successfully.")
+
+
+# def load_feedback_data():
+#     global feedback_data
+#     try:
+#         feedback_data = pd.read_excel(feedback_file_path)
+#     except FileNotFoundError:
+#         feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
+
+def save_feedback(name, feedback, feedback_data):
     feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
     feedback_data.to_excel(feedback_file_path, index=False)
     print("Feedback saved successfully.")
 
-
 def load_feedback_data():
-    global feedback_data
     try:
         feedback_data = pd.read_excel(feedback_file_path)
     except FileNotFoundError:
         feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
+    return feedback_data
 
+feedback_data = load_feedback_data()
 
 
 # def predict_price(Cuisine, Location):
@@ -191,7 +204,7 @@ def main():
     st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'>Feedback</h2>", unsafe_allow_html=True)
     feedback = st.text_area("")
     if st.button("Submit"):
-        save_feedback(name, feedback)
+        save_feedback(name, feedback,feedback_data)
         st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
         
 
