@@ -1,5 +1,7 @@
-- name: Install openpyxl
-  run: pip install openpyxl
+import subprocess
+
+# Install openpyxl using pip
+subprocess.check_call(['pip', 'install', 'openpyxl'])
 import pandas as pd
 import numpy as np
 import streamlit as st
