@@ -66,22 +66,28 @@
    
    #  <img src=https://user-images.githubusercontent.com/106439762/178803205-47a08ce7-2187-4f96-b301-a2b68690619a.gif width="48" height="48" > Limitations and Future Work
    
-1 Not enough data about users or items, making it difficult to give accurate recommendations. 
+1 Not enough data about users or items, making it difficult to give accurate recommendations.
+
    o Alternative data sources 
 
 2 Struggle with updates in real-time, like new user preferences or changing item availability.
+
    o Adapt and update recommendations in real time.
 
 3 Handle sensitive user data, so we need to prioritize privacy.
+
    o Privacy-preserving techniques
 
 4 Not enough information about certain items, especially those that are not popular or niche. 
+
    o Fill missing values by analyzing patterns in user-item interactions to estimate the unknown values.
 
 5 Make recommendations more understandable and transparent.
+
    o Build trust and understanding and take user feedback into account.
 
 6 Better ways to measure recommendation system performance.
+
    o Explore new evaluation metrics that consider user satisfaction, diversity, or long-term engagement
 
 
