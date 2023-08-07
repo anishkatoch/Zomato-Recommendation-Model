@@ -43,17 +43,20 @@
 
 
 # INPUT
+
 ![image](https://github.com/anishkatoch/Zomato-Recommendation-Model/assets/130006013/5335c919-0bcb-44f6-819d-ff8fd13ae8b8)
 ![image](https://github.com/anishkatoch/Zomato-Recommendation-Model/assets/130006013/27fedbf0-b70b-47d2-bbf8-a7e0f5d7524f)
 
 
 
 # FINDINGS
+
 ![image](https://github.com/anishkatoch/Zomato-Recommendation-Model/assets/130006013/750bdc75-e478-4c2b-839b-a24aff8f4dd0)
 
 
 
 # FEEDBACK
+
 ![image](https://github.com/anishkatoch/Zomato-Recommendation-Model/assets/130006013/75b0c89e-c754-4c18-ac11-5544a0b50d34)
 
 
