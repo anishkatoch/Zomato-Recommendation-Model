@@ -16,11 +16,11 @@
 | Files| Description |
 | -------------   | ------------- |
 | **Zomato_model_Scrapping**  | This folder contains the ipynb code of the Web scrapping.  |
-| **Zomato_model_dataset** | This file contain the  scraped data in Excel format. |
-| **Zomato_CSV**  | This file contain the  scraped data in CSV format. |
-| **Zomato_ML_Project_Location_Prediction** | This folder contains the ipynb code of the Web scrapping and tran|  
-| **Linear Model Streamlit**  | This folder contains the ipynb code of the Web scrapping.  |
-| **main**  | This folder contains the ipynb code of the Web scrapping.  |
+| **Zomato Data** | This file contain the  scraped data in Excel format. |
+| **Zomato CSV**  | This file contain the  scraped data in CSV format. |
+| **Zomato_ML_Project_Location_Prediction** | This folder contains the code of model building. |  
+| **Linear Model Streamlit**  | This folder contains the code of ML model through Linear Regression.  |
+| **mine**  | This folder contains the code of making the webpage that is both backend and frontend .  |
 | **ZOMATO_MODEL_PPT**  | This file contain the presentation on this project using power point.  |
 
 <br>
@@ -70,21 +70,26 @@
 
    o Alternative data sources 
 
+
 2 Struggle with updates in real-time, like new user preferences or changing item availability.
 
    o Adapt and update recommendations in real time.
+
 
 3 Handle sensitive user data, so we need to prioritize privacy.
 
    o Privacy-preserving techniques
 
+
 4 Not enough information about certain items, especially those that are not popular or niche. 
 
    o Fill missing values by analyzing patterns in user-item interactions to estimate the unknown values.
 
+
 5 Make recommendations more understandable and transparent.
 
    o Build trust and understanding and take user feedback into account.
+
 
 6 Better ways to measure recommendation system performance.
 
