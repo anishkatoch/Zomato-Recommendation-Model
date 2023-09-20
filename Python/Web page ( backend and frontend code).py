@@ -17,7 +17,7 @@ feedback_file_path = "feedback.xlsx"
 feedback_data = pd.DataFrame()  
 
 
-
+# FEEDBACK
 def save_feedback(name, feedback):
     global feedback_data
     feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
@@ -33,7 +33,7 @@ def load_feedback_data():
         feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
 
 
-
+# PREDICT_PRICE
 def predict_price(Cuisine, Location):
     df2=pd.read_excel('F:\\Masai\\Project Webpage\\Zomato Data.xlsx')
     df3=df2[['Cuisine','Location','Price_For_One']]
@@ -73,7 +73,7 @@ def predict_price(Cuisine, Location):
 
     return round(lr.predict(x_test).mean())
 
-
+# PREDICT_LOCATION
 def predict_location(Cuisine, Location, Preferred_Price_For_1):
     df = pd.read_excel("F:\\Masai\\Project Webpage\\Zomato Data.xlsx")
     z = pd.DataFrame({"Cuisine": [Cuisine], "Location": [Location], "Price_For_One": [Preferred_Price_For_1]})
@@ -103,6 +103,7 @@ def predict_location(Cuisine, Location, Preferred_Price_For_1):
     ypred = model.predict(xts)
     return dict2[ypred[-1]]
 
+# PAGE_STYLING
 page_bg_img = '''
     <style>
     [data-testid="stAppViewContainer"]
@@ -115,7 +116,7 @@ page_bg_img = '''
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
-
+# MAIN_FUNCTION_CALL
 def main():
 
 
