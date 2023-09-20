@@ -122,8 +122,8 @@
 
 
 
-
-## Conclusion
+<br>
+# Conclusion
 
 Our Zomato recommendation model for Bangalore aims to provide a comprehensive dining experience by offering insights into average prices, popular cuisines, top-rated restaurants, cuisine details, and personalized recommendations. Whether you're a local foodie or a visitor to Bangalore, our model is here to enhance your dining adventures.
 
