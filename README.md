@@ -61,6 +61,54 @@
 
 
 
+
+
+
+# ANALYSIS
+
+
+
+### 1. Average Price
+- Our model calculates the average price range for dining at different restaurants in Bangalore. This helps users plan their budget for a meal out.
+
+
+
+### 2. Popular Cuisine
+- We identify the most popular cuisines in Bangalore based on user reviews and restaurant data. This feature allows users to explore and discover new culinary experiences.
+
+
+
+### 3. Most Popular Restaurant
+- We highlight the top-rated and most popular restaurant in Bangalore. Users can trust this recommendation for an exceptional dining experience.
+
+
+
+### 4. Cuisine Details
+- For each restaurant, we provide information about the cuisine it serves. Users can easily find out which cuisines are available at their preferred dining spot.
+
+
+
+### 5. Popular Restaurants by Cuisine
+- Users can explore restaurants that serve their preferred cuisine. We recommend the best places to enjoy a specific type of food based on user preferences.
+
+
+
+### 6. Recommended Price
+- Our model suggests an appropriate price range for dining based on the user's input preferences. This ensures that users can find restaurants that match their budget.
+
+
+
+### 7. Recommended Location
+- We recommend dining locations in Bangalore based on the user's preferred location and cuisine. This feature helps users find restaurants that are conveniently situated.
+
+
+
+
+## Conclusion
+
+Our Zomato recommendation model for Bangalore aims to provide a comprehensive dining experience by offering insights into average prices, popular cuisines, top-rated restaurants, cuisine details, and personalized recommendations. Whether you're a local foodie or a visitor to Bangalore, our model is here to enhance your dining adventures.
+
+
 <br>
 <br>
    
