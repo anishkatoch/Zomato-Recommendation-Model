@@ -1,6 +1,16 @@
 
 
 # Zomato_Recommendation_Model
+
+
+
+
+![images](https://github.com/anishkatoch/Zomato-Recommendation-Model/assets/130006013/8153d1a2-f288-428a-bd75-f8ef59555f23)
+
+
+
+
+
 **Zomato, a pioneering Indian multinational restaurant aggregator and food delivery company, was established in 2008 with its headquarters in Gurugram, Haryana, India. Originally conceived as a restaurant review and discovery platform, Zomato has rapidly evolved into a trailblazing food tech enterprise.**
 
 **Through relentless innovation, a technology-driven approach, and an unwavering commitment to customer satisfaction, Zomato has emerged as a dominant force in the dynamic food delivery and restaurant landscape. Continually pushing boundaries, Zomato's comprehensive services have reshaped the way people explore, order, and enjoy culinary experiences.**
