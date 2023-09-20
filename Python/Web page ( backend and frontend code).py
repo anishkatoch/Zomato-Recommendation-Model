@@ -18,7 +18,8 @@ feedback_data = pd.DataFrame()
 
 
 # FEEDBACK
-def save_feedback(name, feedback):
+
+# def save_feedback(name, feedback):
     global feedback_data
     feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
     feedback_data.to_excel(feedback_file_path, index=False)
