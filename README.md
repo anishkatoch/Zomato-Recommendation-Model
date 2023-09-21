@@ -24,7 +24,6 @@
 
 **Through relentless innovation, a technology-driven approach, and an unwavering commitment to customer satisfaction, Zomato has emerged as a dominant force in the dynamic food delivery and restaurant landscape. Continually pushing boundaries, Zomato's comprehensive services have reshaped the way people explore, order, and enjoy culinary experiences.**
 
-**With a legacy of transformation and growth, Zomato stands at the forefront of the food industry, connecting restaurants, delivery partners, and customers in a seamless and delightful journey**
 
 
 <br>
