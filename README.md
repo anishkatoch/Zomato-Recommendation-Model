@@ -46,13 +46,16 @@
 
 # <img src="https://user-images.githubusercontent.com/106439762/181937125-2a4b22a3-f8a9-4226-bbd3-df972f9dbbc4.gif" width="48" height="48" > Quick Start
 
-1. **Data Scraping**: Used Python with libraries like Selenium and BeautifulSoup to scrape data from the Zomato website. The scraped data was then saved in a structured format.
+1.  **Data Scraping**: Used Python with libraries like Selenium and BeautifulSoup to scrape data from the Zomato website. The scraped data was then saved in a structured format.
 
-2. **Data Cleaning and Preprocessing**: Performed data cleaning and preprocessing using Python's data manipulation libraries, such as NumPy and Pandas. This step involved handling missing values, correcting data inconsistencies, and ensuring the data is in a clean and usable form.
 
-3. **Power BI Data Transformation**: Utilized Power BI to connect to the MySQL database and fetched the required data for analysis. In Power BI, the data was transformed using Power Query to ensure it aligns with the visualization requirements.
+2.  **Data Cleaning and Preprocessing**: Performed data cleaning and preprocessing using Python's data manipulation libraries, such as NumPy and Pandas. This step involved handling missing values, correcting data inconsistencies, and ensuring the data is in a clean and usable form.
 
-4. **Dashboard Creation**: Designed an interactive dashboard in Power BI, using the transformed data, to visualize key insights into the West Bengal elections. The dashboard included visualizations and reports related to candidate information, constituency distribution, candidate demographics, political party affiliations, and other relevant details
+
+3.  **Power BI Data Transformation**: Utilized Power BI to connect to the MySQL database and fetched the required data for analysis. In Power BI, the data was transformed using Power Query to ensure it aligns with the visualization requirements.
+
+
+4.  **Dashboard Creation**: Designed an interactive dashboard in Power BI, using the transformed data, to visualize key insights into the West Bengal elections. The dashboard included visualizations and reports related to candidate information, constituency distribution, candidate demographics, political party affiliations, and other relevant details
     
 <br>
 
