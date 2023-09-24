@@ -134,13 +134,11 @@
 - Personalized recommendations for price range and location simplify finding the perfect dining spot aligned with user preferences.
 - Whether you're a local connoisseur of Bangalore's culinary scene or a visitor exploring its gastronomic delights, our model aims to be your trusted companion.
 
-Our Zomato recommendation model for Bangalore aims to provide a comprehensive dining experience by offering insights into average prices, popular cuisines, top-rated restaurants, cuisine details, and personalized recommendations. Whether you're a local foodie or a visitor to Bangalore, our model is here to enhance your dining adventures.
-
 
 <br>
 <br>
    
-   #  <img src=https://user-images.githubusercontent.com/106439762/178803205-47a08ce7-2187-4f96-b301-a2b68690619a.gif width="48" height="48" > Limitations
+#  <img src=https://user-images.githubusercontent.com/106439762/178803205-47a08ce7-2187-4f96-b301-a2b68690619a.gif width="48" height="48" > Limitations
    
 * Not enough data about users or items, making it difficult to give accurate recommendations.
 * Struggle with updates in real-time, like new user preferences or changing item availability.
@@ -150,7 +148,7 @@ Our Zomato recommendation model for Bangalore aims to provide a comprehensive di
 * Better ways to measure recommendation system performance.
 
 
-  #  <img src=https://user-images.githubusercontent.com/106439762/178803205-47a08ce7-2187-4f96-b301-a2b68690619a.gif width="48" height="48" > Future Work
+#  <img src=https://user-images.githubusercontent.com/106439762/178803205-47a08ce7-2187-4f96-b301-a2b68690619a.gif width="48" height="48" > Future Work
   
  * Alternative data sources 
  * Adapt and update recommendations in real time.
@@ -159,4 +157,11 @@ Our Zomato recommendation model for Bangalore aims to provide a comprehensive di
  * Build trust and understanding and take user feedback into account.
  * Explore new evaluation metrics that consider user satisfaction, diversity, or long-term engagement
 
+#  <img src=https://user-images.githubusercontent.com/106439762/178803205-47a08ce7-2187-4f96-b301-a2b68690619a.gif width="48" height="48" > Challenges
+- Not enough data about users or items, making it difficult to give accurate recommendations.
+- Struggle with updates in real-time, like new user preferences or changing item availability.
+- Handle sensitive user data, so we need to prioritize privacy.
+- Not enough information about certain items, especially those that are not popular or niche.
+- Make recommendations more understandable and transparent.
+- Better ways to measure recommendation system performance.
 
