@@ -1,6 +1,6 @@
 
 
-# Zomato_Recommendation_Model
+# Zomato Recommendation Model
 
 
 
@@ -134,11 +134,9 @@ Our Zomato recommendation model for Bangalore aims to provide a comprehensive di
 <br>
 <br>
    
-   #  <img src=https://user-images.githubusercontent.com/106439762/178803205-47a08ce7-2187-4f96-b301-a2b68690619a.gif width="48" height="48" > Limitations and Future Work
+   #  <img src=https://user-images.githubusercontent.com/106439762/178803205-47a08ce7-2187-4f96-b301-a2b68690619a.gif width="48" height="48" > Limitations
    
 * Not enough data about users or items, making it difficult to give accurate recommendations.
-
-  
 * Struggle with updates in real-time, like new user preferences or changing item availability.
 * Handle sensitive user data, so we need to prioritize privacy.
 * Not enough information about certain items, especially those that are not popular or niche.
@@ -146,16 +144,13 @@ Our Zomato recommendation model for Bangalore aims to provide a comprehensive di
 * Better ways to measure recommendation system performance.
 
 
-
-   o Alternative data sources 
-
-   o Adapt and update recommendations in real time.
-
-   o Privacy-preserving techniques
-
-   o Fill missing values by analyzing patterns in user-item interactions to estimate the unknown values.
-
-   o Build trust and understanding and take user feedback into account.
-   o Explore new evaluation metrics that consider user satisfaction, diversity, or long-term engagement
+  #  <img src=https://user-images.githubusercontent.com/106439762/178803205-47a08ce7-2187-4f96-b301-a2b68690619a.gif width="48" height="48" > Future Work
+  
+ * Alternative data sources 
+ * Adapt and update recommendations in real time.
+ * Privacy-preserving techniques
+ * Fill missing values by analyzing patterns in user-item interactions to estimate the unknown values.
+ * Build trust and understanding and take user feedback into account.
+ * Explore new evaluation metrics that consider user satisfaction, diversity, or long-term engagement
 
 
