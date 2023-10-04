@@ -44,6 +44,34 @@
 <br>
 
 
+
+
+
+
+
+# Problem Statement 
+
+
+
+
+In the bustling world of dining and culinary exploration, Zomato stands as a beacon of convenience and choice. However, amidst the vast array of restaurants, cuisines, and user preferences, a challenge arises - how to assist users in making informed dining decisions that align with their tastes, budgets, and locations? This project delves into the realm of data-driven solutions to address this challenge. By utilizing web scraping and machine learning techniques, the project seeks to curate a personalized dining experience for Zomato users in Bangalore. The challenge is to develop an effective recommendation system that considers various factors like average price, popular cuisines, and user feedback. The primary objective is to empower users with insightful recommendations that guide them to the perfect dining destination, enhancing their overall Zomato experience.
+
+
+
+
+
+
+
+# Aimed to solve
+
+
+
+
+This project aspires to revolutionize the way users discover and choose dining options in Bangalore through data-driven insights and recommendations. By harnessing data scraping and machine learning, the aim is to provide users with tailored suggestions that cater to their preferences, budgets, and locations. The project seeks to simplify the decision-making process for users while promoting local restaurants, cuisines, and exceptional dining experiences. Ultimately, it strives to make dining choices more personalized, convenient, and enjoyable, thereby enhancing the overall Zomato user experience in Bangalore's vibrant food scene.
+
+
+
+
 # <img src="https://user-images.githubusercontent.com/106439762/181937125-2a4b22a3-f8a9-4226-bbd3-df972f9dbbc4.gif" width="48" height="48" > Quick Start
 
 1.  **Data Scraping**: Used Python with libraries like Selenium and BeautifulSoup to scrape data from the Zomato website. The scraped data was then saved in a structured format.
