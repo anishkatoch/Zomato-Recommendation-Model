@@ -12,7 +12,7 @@ df=pd.read_csv(url)
 feedback_file_path = "feedback.xlsx"
 feedback_data = pd.DataFrame()  
 
-
+# Feedback 
 def save_feedback(name, feedback):
     global feedback_data
     new_feedback = pd.DataFrame({"Name": [name], "Feedback": [feedback]})
@@ -28,7 +28,7 @@ def load_feedback_data():
     except FileNotFoundError:
         feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
 
-
+# designing the webpage
 page_bg_img = '''
     <style>
     [data-testid="stAppViewContainer"]
@@ -40,7 +40,7 @@ page_bg_img = '''
     ''' 
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
-
+# main function to call other function 
 def main():
     global feedback_data
     feedback_data = load_feedback_data()
@@ -51,7 +51,7 @@ def main():
         print(f"Error occurred while saving feedback: {str(e)}")
         
     st.markdown("<h1 style='text-align: center; color: Chartreuse; padding: 20px; background-color: #F06292;'>RECOMMENDATION MODEL</h1>", unsafe_allow_html=True)
-    
+    # making the feedback colourful
     html_temp = """
     <div style = 'background-color: orange ; padding : 0px ; max-width: 400px; margin: 20px auto;'>
     <h1 style = "color:red;text-align:center;"><b>ZOMATO</b></h1>
@@ -59,7 +59,8 @@ def main():
     """
 
     st.markdown(html_temp, unsafe_allow_html = True)
-
+    
+    # logics 
     cuisines = df['Cuisine'].unique()
     st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'><b>Cuisine:</b></h2>", unsafe_allow_html=True)
     Cuisine = st.selectbox("",cuisines) 
@@ -70,7 +71,8 @@ def main():
 
     st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'>Preferred Price For One:</h2>", unsafe_allow_html=True)
     Preferred_Price_For_1 = st.text_input("", key="price_input")
-    
+
+    # creating button
     if st.button("Predict"):
 
         avg = round(df[(df['Cuisine'] == Cuisine) | (df['Location'] == Preferred_Location)]['Price_For_One'].mean())
@@ -116,6 +118,6 @@ def main():
         
         st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
     
-            
+# constructor          
 if __name__ == '__main__':
     main()
