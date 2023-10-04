@@ -1,10 +1,11 @@
+# import library
 import pandas as pd
 import numpy as np
 import streamlit as st
 import pickle
 import os
 
-
+# clicking on link 
 url="https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/Zomato%20CSV.csv"
 df=pd.read_csv(url)
 
