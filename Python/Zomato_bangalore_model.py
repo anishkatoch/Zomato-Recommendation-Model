@@ -91,16 +91,12 @@ def main():
     # Get user input
     user_input = st.text_area("Enter your text:")
 
+    # GitHub API token for authentication
+    github_token = "your_github_token"
+
     # Display a button to save the text
     if st.button("Save"):
-        # Provide the destination file path
-        destination_file_path = "https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.csv"
-        
-        # Save the text to the file
-        save_to_file(user_input, destination_file_path)
-        
-        # Display a success message
-        st.success("Text saved successfully!")
+        save_to_github(user_input, github_token)
 
     st.markdown("<h1 style='text-align: center; color: gold; padding: 15px; background-color: grey; font: bold 50px  heavy ; border-radius: 20px;'>ZOMATO MODEL</h1>", unsafe_allow_html=True)
 
