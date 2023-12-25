@@ -127,9 +127,9 @@ page_bg_img = '''
     </style>
     ''' 
 st.markdown(page_bg_img, unsafe_allow_html=True)
-def save_to_file(data, file_path):
-    with open(file_path, 'a') as file:
-        file.write(data + '\n')
+# def save_to_file(data, file_path):
+#     with open(file_path, 'a') as file:
+#         file.write(data + '\n')
 
 
 def main():
