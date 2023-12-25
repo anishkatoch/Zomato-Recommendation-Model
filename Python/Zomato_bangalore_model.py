@@ -55,7 +55,7 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
 def main():
- 
+    st.markdown("<h1 style='text-align: center; color: gold; padding: 15px; background-color: grey; font: bold 50px  heavy ; border-radius: 20px;'>ZOMATO MODEL</h1>", unsafe_allow_html=True)
     html_temp = """
     <div style='background-color: #333; padding: 2px; max-width: 400px; margin: 20px auto;'>
     <h1 style='color: red; text-align: center; font-family: "Bradley Hand ITC", cursive; font-weight: bold; border-radius: 20px;'><b>BANGALORE</b></h1>
