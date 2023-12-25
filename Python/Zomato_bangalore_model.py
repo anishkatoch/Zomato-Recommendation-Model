@@ -2,18 +2,11 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
-
 import requests
 from base64 import b64encode
-
-def save_to_github(data, github_token):
-    # Replace with your GitHub repository details
-    repo_owner = "anishkatoch"
-    repo_name = "Zomato-Recommendation-Model"
-    file_path = "https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.csv"
-
+def read_excel_from_github(github_token, file_path):
     # GitHub API URL
-    api_url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}"
+    api_url = f"https://api.github.com/repos/your_username/your_repository/contents/{file_path}"
 
     # Headers with authentication
     headers = {
@@ -24,26 +17,40 @@ def save_to_github(data, github_token):
     # Get current content
     response = requests.get(api_url, headers=headers)
     response_data = response.json()
-    current_content = response_data.get("content", "")
+    content = response_data.get("content", "")
 
-    # Append new data
-    new_content = current_content + data + '\n'
+    # Decode content and read Excel
+    decoded_content = b64encode(content.encode()).decode()
+    df = pd.read_csv(pd.compat.StringIO(decoded_content))
+
+    return df
+
+def save_to_github(github_token, file_path, df):
+    # GitHub API URL
+    api_url = f"https://api.github.com/repos/anishkatoch/Zomato-Recommendation-Model/contents/{file_path}"
+
+    # Convert DataFrame to Excel and encode in Base64
+    encoded_content = b64encode(df.to_excel(index=False).encode()).decode()
+
+    # Headers with authentication
+    headers = {
+        "Authorization": f"token {github_token}",
+        "Accept": "application/vnd.github.v3+json"
+    }
 
     # Create/update the file
     payload = {
-        "message": "Add user feedback",
-        "content": b64encode(new_content.encode()).decode(),
+        "message": "Update Excel file",
+        "content": encoded_content,
         "sha": response_data.get("sha", "")
     }
 
     response = requests.put(api_url, headers=headers, json=payload)
-    
+
     if response.status_code == 200:
-        st.success("Feedback saved successfully on GitHub!")
+        st.success("Data saved successfully to Excel file on GitHub!")
     else:
-        st.error(f"Error saving feedback. Status code: {response.status_code}")
-
-
+        st.error(f"Error saving data. Status code: {response.status_code}")
 
 
 
@@ -126,23 +133,33 @@ def save_to_file(data, file_path):
 
 
 def main():
-
-    st.title("Streamlit Text Saver")
-
-    # Get user input
-    user_input = st.text_area("Enter your text:")
+    st.title("Streamlit Excel Saver")
 
     # GitHub API token for authentication
     github_token = "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"
 
+    # Read existing Excel file from GitHub
+    file_path = "https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.csv"
+    df = read_csv_from_github(github_token, file_path)
+
+    # Display existing data
+    st.write("Existing Data:")
+    st.write(df)
+
+    # Get user input
+    user_input = st.text_input("Enter your data:")
+
     # Display a button to save the text
     if st.button("Save"):
-        save_to_github(user_input, github_token)
+        # Update DataFrame with user input
+        df = pd.concat([df, pd.DataFrame({"Data": [user_input]})], ignore_index=True)
 
-    st.markdown("<h1 style='text-align: center; color: gold; padding: 15px; background-color: grey; font: bold 50px  heavy ; border-radius: 20px;'>ZOMATO MODEL</h1>", unsafe_allow_html=True)
+        # Save updated DataFrame to GitHub
+        save_to_github(github_token, file_path, df)
 
-
-   
+        # Display updated data
+        st.write("Updated Data:")
+        st.write(df)
 
     html_temp = """
     <div style='background-color: #333; padding: 2px; max-width: 400px; margin: 20px auto;'>
