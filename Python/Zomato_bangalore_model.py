@@ -16,7 +16,7 @@ zomatoNewRestaurant = pd.read_csv(url2)
 # zomatoData = pd.read_csv(r'D:\Zomato_cleanData.csv')
 # zomatoNewRestaurant = pd.read_csv(r'D:\Zomato_new_restaurant.csv')
 
-feedback_file_path = "https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.xlsx"
+feedback_file_path = "https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.csv"
 feedback_data = pd.DataFrame()  
 
 
