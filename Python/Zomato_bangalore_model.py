@@ -18,10 +18,10 @@ import streamlit as st
 # url="https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/Zomato%20CSV.csv"
 # df=pd.read_csv(url)
 
-url1="https://github.com/anishkatoch/Zomato-Recommendation-Model/blob/main/Datasets/Zomato_cleanData.csv"
+url1="https://github.com/anishkatoch/Zomato-Recommendation-Model/blob/Datasets/Zomato_cleanData.csv"
 zomatoData=pd.read_csv(url1)
 
-url2="https://github.com/anishkatoch/Zomato-Recommendation-Model/blob/main/Datasets/Zomato_new_restaurant.csv"
+url2="https://github.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/Zomato_new_restaurant.csv"
 zomatoNewRestaurant = pd.read_csv(url2)
 
 # zomatoData = pd.read_csv(r'D:\Zomato_cleanData.csv')
