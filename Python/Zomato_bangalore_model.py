@@ -79,10 +79,28 @@ page_bg_img = '''
     </style>
     ''' 
 st.markdown(page_bg_img, unsafe_allow_html=True)
-
+def save_to_file(data, file_path):
+    with open(file_path, 'a') as file:
+        file.write(data + '\n')
 
 
 def main():
+
+    st.title("Streamlit Text Saver")
+
+    # Get user input
+    user_input = st.text_area("Enter your text:")
+
+    # Display a button to save the text
+    if st.button("Save"):
+        # Provide the destination file path
+        destination_file_path = "https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.csv"
+        
+        # Save the text to the file
+        save_to_file(user_input, destination_file_path)
+        
+        # Display a success message
+        st.success("Text saved successfully!")
 
     st.markdown("<h1 style='text-align: center; color: gold; padding: 15px; background-color: grey; font: bold 50px  heavy ; border-radius: 20px;'>ZOMATO MODEL</h1>", unsafe_allow_html=True)
 
