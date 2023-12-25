@@ -3,38 +3,79 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
+import requests
+from base64 import b64encode
+
+def save_to_github(data, github_token):
+    # Replace with your GitHub repository details
+    repo_owner = "anishkatoch"
+    repo_name = "Zomato-Recommendation-Model"
+    file_path = "https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.csv"
+
+    # GitHub API URL
+    api_url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}"
+
+    # Headers with authentication
+    headers = {
+        "Authorization": f"token {github_token}",
+        "Accept": "application/vnd.github.v3+json"
+    }
+
+    # Get current content
+    response = requests.get(api_url, headers=headers)
+    response_data = response.json()
+    current_content = response_data.get("content", "")
+
+    # Append new data
+    new_content = current_content + data + '\n'
+
+    # Create/update the file
+    payload = {
+        "message": "Add user feedback",
+        "content": b64encode(new_content.encode()).decode(),
+        "sha": response_data.get("sha", "")
+    }
+
+    response = requests.put(api_url, headers=headers, json=payload)
+    
+    if response.status_code == 200:
+        st.success("Feedback saved successfully on GitHub!")
+    else:
+        st.error(f"Error saving feedback. Status code: {response.status_code}")
 
 
 
-feedback_file_path = "https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.csv"
-feedback_data = pd.DataFrame(columns=["Name", "Feedback"])
 
-def save_feedback(name, feedback):
-    global feedback_data
-    feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
-    feedback_data.to_csv(feedback_file_path, index=False)
-    print("Feedback saved successfully.")
 
-def load_feedback_data():
-    global feedback_data
-    try:
-        feedback_data = pd.read_csv(feedback_file_path)
-    except FileNotFoundError:
-        feedback_data = pd.DataFrame(columns=["Name", "Feedback"])
+# feedback_file_path = "https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.csv"
+# feedback_data = pd.DataFrame(columns=["Name", "Feedback"])
 
-load_feedback_data()
+# def save_feedback(name, feedback):
+#     global feedback_data
+#     feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
+#     feedback_data.to_csv(feedback_file_path, index=False)
+#     print("Feedback saved successfully.")
 
-st.markdown("<h1 style='text-align: center; color: DarkGoldenrod;'>FEEDBACK</h1>", unsafe_allow_html=True)
+# def load_feedback_data():
+#     global feedback_data
+#     try:
+#         feedback_data = pd.read_csv(feedback_file_path)
+#     except FileNotFoundError:
+#         feedback_data = pd.DataFrame(columns=["Name", "Feedback"])
 
-st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'><b>Name</b></span></h2>", unsafe_allow_html=True)
-name = st.text_input("Enter your name:")
+# load_feedback_data()
 
-st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'>Feedback</span></h2>", unsafe_allow_html=True)
-feedback = st.text_area("Enter your feedback:")
+# st.markdown("<h1 style='text-align: center; color: DarkGoldenrod;'>FEEDBACK</h1>", unsafe_allow_html=True)
 
-if st.button("Submit"):
-    save_feedback(name, feedback)
-    st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
+# st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'><b>Name</b></span></h2>", unsafe_allow_html=True)
+# name = st.text_input("Enter your name:")
+
+# st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'>Feedback</span></h2>", unsafe_allow_html=True)
+# feedback = st.text_area("Enter your feedback:")
+
+# if st.button("Submit"):
+#     save_feedback(name, feedback)
+#     st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
 
 # clicking on link 
 # url="https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/Zomato%20CSV.csv"
@@ -92,7 +133,7 @@ def main():
     user_input = st.text_area("Enter your text:")
 
     # GitHub API token for authentication
-    github_token = "your_github_token"
+    github_token = "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"
 
     # Display a button to save the text
     if st.button("Save"):
