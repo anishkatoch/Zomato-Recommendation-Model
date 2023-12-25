@@ -14,7 +14,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
-clicking on link 
+# clicking on link 
 url="https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/Zomato%20CSV.csv"
 df=pd.read_csv(url)
 
