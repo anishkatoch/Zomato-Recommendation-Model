@@ -7,8 +7,11 @@ import streamlit as st
 import pandas as pd
 import streamlit as st
 
+import pandas as pd
+import streamlit as st
+
 feedback_file_path = "https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.csv"
-feedback_data = pd.DataFrame()
+feedback_data = pd.DataFrame(columns=["Name", "Feedback"])
 
 def save_feedback(name, feedback):
     global feedback_data
@@ -21,7 +24,7 @@ def load_feedback_data():
     try:
         feedback_data = pd.read_csv(feedback_file_path)
     except FileNotFoundError:
-        feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
+        feedback_data = pd.DataFrame(columns=["Name", "Feedback"])
 
 load_feedback_data()
 
@@ -36,6 +39,7 @@ feedback = st.text_area("Enter your feedback:")
 if st.button("Submit"):
     save_feedback(name, feedback)
     st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
+
 
 
 # clicking on link 
