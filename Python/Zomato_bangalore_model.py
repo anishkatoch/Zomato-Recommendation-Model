@@ -15,14 +15,14 @@ import numpy as np
 import streamlit as st
 
 # clicking on link 
-url="https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/Zomato%20CSV.csv"
-df=pd.read_csv(url)
+# url="https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/Zomato%20CSV.csv"
+# df=pd.read_csv(url)
 
-# url1="https://github.com/anishkatoch/Zomato-Recommendation-Model/blob/Datasets/Zomato_cleanData.csv"
-# zomatoData=pd.read_csv(url1)
+url1="https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/zomatoCleanData.csv"
+zomatoData=pd.read_csv(url1)
 
-# url2="https://github.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/Zomato_new_restaurant.csv"
-# zomatoNewRestaurant = pd.read_csv(url2)
+url2="https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/zomatoNewRestaurant.csv"
+zomatoNewRestaurant = pd.read_csv(url2)
 
 # zomatoData = pd.read_csv(r'D:\Zomato_cleanData.csv')
 # zomatoNewRestaurant = pd.read_csv(r'D:\Zomato_new_restaurant.csv')
