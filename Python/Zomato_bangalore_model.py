@@ -1,15 +1,4 @@
-# designing the webpage
-# page_bg_img = '''
-#     <style>
-#     [data-testid="stAppViewContainer"]
-#     {
 #     background-image: url("https://plus.unsplash.com/premium_photo-1663852297801-d277b7af6594?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80");
-#     background-size: cover;
-#     }
-#     </style>
-#     ''' 
-# st.markdown(page_bg_img, unsafe_allow_html=True)
-
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -27,7 +16,7 @@ zomatoNewRestaurant = pd.read_csv(url2)
 # zomatoData = pd.read_csv(r'D:\Zomato_cleanData.csv')
 # zomatoNewRestaurant = pd.read_csv(r'D:\Zomato_new_restaurant.csv')
 
-feedback_file_path = "feedback.xlsx"
+feedback_file_path = "https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.xlsx"
 feedback_data = pd.DataFrame()  
 
 
