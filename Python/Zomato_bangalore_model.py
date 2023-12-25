@@ -4,17 +4,7 @@ import numpy as np
 import streamlit as st
 
 
-import pandas as pd
-import streamlit as st
 
-import pandas as pd
-import streamlit as st
-
-feedback_file_path = "https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.csv"
-feedback_data = pd.DataFrame(columns=["Name", "Feedback"])
-
-import pandas as pd
-import streamlit as st
 
 feedback_file_path = "https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.csv"
 feedback_data = pd.DataFrame(columns=["Name", "Feedback"])
