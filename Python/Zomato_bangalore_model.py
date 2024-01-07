@@ -81,6 +81,26 @@ def main():
     if st.button("Predict"):
         #average price
         avgPrice = round(zomatoData[(zomatoData['cuisine'] == Cuisine) & (zomatoData['location'] == Location)]['price_for_one'].mean())
+
+        #show Customer Restaurant 
+        bestRestaurant = zomatoData[(zomatoData['cuisine'] == Cuisine) & (zomatoData['location'] == Location)]
+        bestMeanRatings = bestRestaurant['ratings'].mean()
+        bestRestaurant = bestRestaurant[bestRestaurant['ratings'] >= bestMeanRatings]
+        bestMedianReview = bestRestaurant['delivery_review_no'].median()
+        bestRestaurant = bestRestaurant[bestRestaurant['delivery_review_no']>=bestMedianReview]
+        minPrice = bestRestaurant['price_for_one'].min()
+        bestRestaurant = bestRestaurant[bestRestaurant['price_for_one']>=minPrice].head(1)
+        bestRestaurantName = bestRestaurant['restaurant_name'].to_string()
+        showRestaurantName = bestRestaurantName[1:].strip()
+
+        #Timings
+        Timings = bestRestaurant[bestRestaurant['price_for_one']>=minPrice].head(1)['timings']
+        Timings = "".join(Timings)
+        
+
+        #Restaurant Link
+        navigateLink = bestRestaurant[bestRestaurant['price_for_one']>=minPrice].head(1)['links']
+        surfTo = "".join(navigateLink)
         
         #Popular Rest. name in that area
         filter_loc = zomatoData[(zomatoData['location'] == Location)]
