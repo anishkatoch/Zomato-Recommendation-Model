@@ -6,8 +6,9 @@ import requests
 from base64 import b64encode
 
 
+url3="https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.csv"
 
-feedback_file_path = "feedback.csv"
+feedback_file_path = (url3)
 feedback_data = pd.DataFrame(columns=["name", "feedback"])  
 
 def save_feedback(name, feedback):
