@@ -27,19 +27,19 @@ zomatoNewRestaurant = pd.read_csv(url2)
 
 
 
-# def save_feedback(name, feedback):
-#     global feedback_data
-#     feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
-#     feedback_data.to_csv(feedback_file_path, index=False)
-#     print("Feedback saved successfully.")
+def save_feedback(name, feedback):
+    global feedback_data
+    feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
+    feedback_data.to_csv(feedback_file_path, index=False)
+    print("Feedback saved successfully.")
 
 
-# def load_feedback_data():
-#     global feedback_data
-#     try:
-#         feedback_data = pd.read_csv(feedback_file_path)
-#     except FileNotFoundError:
-#         feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
+def load_feedback_data():
+    global feedback_data
+    try:
+        feedback_data = pd.read_csv(feedback_file_path)
+    except FileNotFoundError:
+        feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
 
 
 page_bg_img = '''
@@ -178,17 +178,17 @@ def main():
         pass
     
     
-    # Add feedback section
-    # load_feedback_data()
-    # st.markdown("<h1 style='text-align: center; color: DarkGoldenrod;'>FEEDBACK</h1>", unsafe_allow_html=True)
+    Add feedback section
+    load_feedback_data()
+    st.markdown("<h1 style='text-align: center; color: DarkGoldenrod;'>FEEDBACK</h1>", unsafe_allow_html=True)
     
-    # st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'><b>Name</b></h2>", unsafe_allow_html=True)
-    # name = st.text_input("")
-    # st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'>Feedback</h2>", unsafe_allow_html=True)
-    # feedback = st.text_area("")
-    # if st.button("Submit"):
-    #     save_feedback(name, feedback)
-    #     st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
+    st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'><b>Name</b></h2>", unsafe_allow_html=True)
+    name = st.text_input("")
+    st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'>Feedback</h2>", unsafe_allow_html=True)
+    feedback = st.text_area("")
+    if st.button("Submit"):
+        save_feedback(name, feedback)
+        st.markdown("<span style='color: green; font-weight: bold; font-size: 35px;'>Feedback submitted successfully!</span>", unsafe_allow_html=True)
         
 
     
