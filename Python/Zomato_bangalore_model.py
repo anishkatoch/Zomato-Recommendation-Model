@@ -7,8 +7,8 @@ from base64 import b64encode
 
 
 
-feedback_file_path = "feedback.xlsx"
-feedback_data = pd.DataFrame(columns=["Name", "Feedback"])  
+feedback_file_path = "feedback.csv"
+feedback_data = pd.DataFrame(columns=["name", "feedback"])  
 
 def save_feedback(name, feedback):
     global feedback_data
