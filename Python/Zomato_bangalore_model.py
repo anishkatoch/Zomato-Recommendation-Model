@@ -27,7 +27,7 @@ def save_feedback(name, feedback):
 def load_feedback_data():
     global feedback_data
     try:
-        feedback_data = pd.read_excel(feedback_file_path)
+        feedback_data = pd.read_csv(feedback_file_path)
     except FileNotFoundError:
         print("Feedback file not found. Creating a new DataFrame.")
         feedback_data = pd.DataFrame(columns=["Name", "Feedback"])
