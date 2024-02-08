@@ -6,10 +6,9 @@ import requests
 from base64 import b64encode
 
 
+
 feedback_file_path = "feedback.xlsx"
-feedback_data = pd.DataFrame()  
-
-
+feedback_data = pd.DataFrame(columns=["Name", "Feedback"])  
 
 def save_feedback(name, feedback):
     global feedback_data
@@ -17,13 +16,35 @@ def save_feedback(name, feedback):
     feedback_data.to_excel(feedback_file_path, index=False)
     print("Feedback saved successfully.")
 
-
 def load_feedback_data():
     global feedback_data
     try:
         feedback_data = pd.read_excel(feedback_file_path)
     except FileNotFoundError:
-        feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
+        print("Feedback file not found. Creating a new DataFrame.")
+        feedback_data = pd.DataFrame(columns=["Name", "Feedback"])
+
+# Load existing feedback data if available
+load_feedback_data()
+
+# feedback_file_path = "feedback.xlsx"
+# feedback_data = pd.DataFrame()  
+
+
+
+# def save_feedback(name, feedback):
+#     global feedback_data
+#     feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
+#     feedback_data.to_excel(feedback_file_path, index=False)
+#     print("Feedback saved successfully.")
+
+
+# def load_feedback_data():
+#     global feedback_data
+#     try:
+#         feedback_data = pd.read_excel(feedback_file_path)
+#     except FileNotFoundError:
+#         feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
         
 # feedback_file_path = "https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.csv"
 # feedback_data = pd.DataFrame(columns=["Name", "Feedback"])
