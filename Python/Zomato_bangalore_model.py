@@ -75,8 +75,8 @@ def main():
     st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'>Location:</h2>", unsafe_allow_html=True)
     Location = st.selectbox("",filterLocation) 
 
-    st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'>Preferred Price For One:</h2>", unsafe_allow_html=True)
-    Preferred_Price_For_1 = st.text_input("", key="price_input")
+    # st.markdown("<h2 style='font-size: 24px;margin-bottom: 0px;'><span style='color: red;'>Preferred Price For One:</h2>", unsafe_allow_html=True)
+    # Preferred_Price_For_1 = st.text_input("", key="price_input")
     
     if st.button("Predict"):
         #average price
