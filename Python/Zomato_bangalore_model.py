@@ -17,7 +17,7 @@ def save_feedback(name, feedback):
         print("Error: feedback_data is not a pandas DataFrame.")
         return
     try:
-        feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
+        feedback_data = feedback_data.append({"name": name, "feedback": feedback}, ignore_index=True)
         feedback_data.to_excel(feedback_file_path, index=False)
         print("Feedback saved successfully.")
     except Exception as e:
