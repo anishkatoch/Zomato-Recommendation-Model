@@ -7,8 +7,8 @@ from base64 import b64encode
 
 
 
-# feedback_file_path = "https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.csv"
-# feedback_data = pd.DataFrame(columns=["Name", "Feedback"])
+feedback_file_path = "https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.csv"
+feedback_data = pd.DataFrame(columns=["Name", "Feedback"])
 
 
 # clicking on link 
