@@ -12,9 +12,16 @@ feedback_data = pd.DataFrame(columns=["name", "feedback"])
 
 def save_feedback(name, feedback):
     global feedback_data
-    feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
-    feedback_data.to_excel(feedback_file_path, index=False)
-    print("Feedback saved successfully.")
+    if not isinstance(feedback_data, pd.DataFrame):
+        print("Error: feedback_data is not a pandas DataFrame.")
+        return
+    try:
+        feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
+        feedback_data.to_excel(feedback_file_path, index=False)
+        print("Feedback saved successfully.")
+    except Exception as e:
+        print("An error occurred while saving feedback:", e)
+
 
 def load_feedback_data():
     global feedback_data
