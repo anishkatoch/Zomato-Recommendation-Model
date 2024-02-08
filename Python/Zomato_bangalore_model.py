@@ -34,27 +34,6 @@ def load_feedback_data():
 # Load existing feedback data if available
 load_feedback_data()
 
-# feedback_file_path = "feedback.xlsx"
-# feedback_data = pd.DataFrame()  
-
-
-
-# def save_feedback(name, feedback):
-#     global feedback_data
-#     feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
-#     feedback_data.to_excel(feedback_file_path, index=False)
-#     print("Feedback saved successfully.")
-
-
-# def load_feedback_data():
-#     global feedback_data
-#     try:
-#         feedback_data = pd.read_excel(feedback_file_path)
-#     except FileNotFoundError:
-#         feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
-        
-# feedback_file_path = "https://raw.githubusercontent.com/anishkatoch/Zomato-Recommendation-Model/main/Datasets/feedback.csv"
-# feedback_data = pd.DataFrame(columns=["Name", "Feedback"])
 
 
 # clicking on link 
@@ -70,22 +49,6 @@ zomatoNewRestaurant = pd.read_csv(url2)
 # zomatoData = pd.read_csv(r'D:\Zomato_cleanData.csv')
 # zomatoNewRestaurant = pd.read_csv(r'D:\Zomato_new_restaurant.csv')
 
-
-
-
-# def save_feedback(name, feedback):
-#     global feedback_data
-#     feedback_data = feedback_data.append({"Name": name, "Feedback": feedback}, ignore_index=True)
-#     feedback_data.to_csv(feedback_file_path, index=False)
-#     print("Feedback saved successfully.")
-
-
-# def load_feedback_data():
-#     global feedback_data
-#     try:
-#         feedback_data = pd.read_csv(feedback_file_path)
-#     except FileNotFoundError:
-#         feedback_data = pd.DataFrame({"Name": [], "Feedback": []})
 
 
 page_bg_img = '''
